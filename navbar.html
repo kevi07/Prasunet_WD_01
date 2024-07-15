@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Navigation Menu</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <nav id="navbar">
+        <ul>
+            <li><a href="#section1">Home</a></li>
+            <li><a href="#section2">About</a></li>
+            <li><a href="#section3">Contact Us</a></li>
+            <li><a href="#section4">Gallery</a></li>
+            <li>
+                <div class="dropdown">
+                    <button class="dropbtn">Menu</button>
+                    <div id="myDropdown" class="dropdown-content">
+                      <a href="#">Link 1</a>
+                      <a href="#">Link 2</a>
+                      <a href="#">Link 3</a>
+                    </div>
+                  </div>
+            </li>
+            <li class="profile">
+                <div>
+                    <img src="./images/profile-removebg-preview.png" alt="">
+                </div>
+            </li>
+        </ul>
+        
+    </nav>
+
+    <section id="section1"><br><br>
+        <h1>Home</h1>
+        <h1>Welcome!,</h1>
+    </section>
+    <section id="section2">
+        <h1>About</h1>
+        <p>A simple user-friendly website.where you can easily find and enjoy.It contains a Home page,about page,contact us page and the gallery contains some random pics.This website contains a Better User experience to the users</p>
+    </section>
+    <section id="section3">
+        <h1>Contact Us</h1>
+        <h2>Reach out us!</h2>
+        <div class="search">
+            <input type="text" placeholder="Search.."><img src="./images/search.png" alt="search" width="25px">
+        </div>
+    </section>
+    <section id="section4">
+        <h1>Gallery</h1>
+        <div>
+            <div class="images">
+                <ul>
+                    <li>
+                        <img src="./images/mountain.jpeg" alt="mountain">
+                    <p>Escape the ordinary and explore the beauty of nature. Whether you crave the thrill of a mountain hike or the serenity of a lakeside retreat, our products can help you get there prepared and inspired</p>
+                    </li>
+                    <li>
+                        <img src="./images/opener.jpeg" alt="opener">
+                    <p> Our products are designed with functionality and ease of use in mind. We believe that the right tools can empower you to tackle any task with confidence and efficiency.</p>
+                    </li>
+                    <li>
+                        <img src="./images/salad.jpeg" alt="salad">
+                    <p>Nourish your body and mind with delicious and healthy options. We offer a variety of products that can help you create nutritious meals that taste great and fuel your well-being.</p>
+                    </li>
+                    <li>
+                        <img src="./images/apple.jpeg" alt="">
+                    <p>Celebrate the bounty of the harvest. Savor the fresh flavors and support local farmers with our products designed to make every meal a delicious adventure.pen_spark</p>
+                    </li>
+                </ul>
+            </div>
+        </div><br>
+    </section>
+    <footer>
+        <h4>copyright @</h4>
+    </footer>
+    
+
+    <script>
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+        
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+        
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        </script>
+</body>
+</html>
